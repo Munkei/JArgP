@@ -4,6 +4,10 @@ JArgP
 Java Command Line Argument Parser
 ---------------------------------
 
+[![Build Status](https://travis-ci.org/Munkei/JArgP.png?branch=master)](https://travis-ci.org/Munkei/JArgP)
+
+---
+
 Copyright 2014 Theo Willows
 
 > This file is part of JArgP.
