@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<faqs id="General FAQ"
+      xmlns="http://maven.apache.org/FML/1.0"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://maven.apache.org/FML/1.0 http://maven.apache.org/xsd/fml-1.0.xsd" >
+
+  <part id="meta" >
+    <title>JArgP</title>
+
+    <faq id="license" >
+      <question>Under what license is JArgP available?</question>
+      <answer>
+        <!-- TODO -->
+      </answer>
+    </faq>
+
+    <faq id="bugs" >
+      <question>Something doesn't seem to be working right.  What do I
+      do?</question>
+      <answer>
+        <ol>
+          <li>
+            <p>Have you read the documentation?  If not, do that first.</p>
+          </li>
+          <li>
+            <p>Take a look at the list of open bugs, maybe it is a known
+            flaw.</p>
+          </li>
+          <li>
+            <p>If you can't find an open bug, take a look at the list of closed
+            ones.  Maybe it's an old bug that has been solved.  If it is, make
+            sure you have the latest version of JArgP.</p>
+          </li>
+          <li>
+            <p>If there is no reported bug at all, feel free to report it
+            yourself.</p>
+          </li>
+          <li>
+            <p>If you think you may be able to solve the bug, fork the GitHub
+            repo, solve the bug and create a pull request.</p>
+
+            <p>More information regarding forking and pulling is available at <a
+            href="https://help.github.com/categories/63/articles" >GitHub&apos;s
+            help pages</a>.</p>
+          </li>
+        </ol>
+      </answer>
+    </faq>
+
+  </part>
+
+  <part id="parsing" >
+    <title>Command Line Parsing</title>
+
+    <faq id="which_options_take_values" >
+      <question>What determines which options take a value?</question>
+      <answer>
+        <p>All options take a value (the next command line argument),
+        <em>except</em> for those whose field is a <code>Boolean</code> (or a
+        subclass thereof).</p>
+      </answer>
+    </faq>
+
+    <faq id="negate_booleans" >
+      <question>How can I reverse the value of a boolean?</question>
+      <answer>
+        <p>Set the <code>opposite</code> element to <code>true</code>, and each
+        of the option&apos;s names will get a <code>--no-&#x2026;</code> alias
+        that, when used, sets the value of the field to <code>false</code>.</p>
+
+        <p>If this is not what you want, you can use a second (boolean) field
+        with different names and/or patterns, and use its negated value in
+        combination with the first field.</p>
+      </answer>
+    </faq>
+
+    <faq id="numeric" >
+      <question>How can I define <code>--&lt;number&gt;</code> options?
+      (E.g. <code>--1</code>, <code>--2</code>, etc.)</question>
+      <answer>
+        <p>Use the <code>pattern</code> element like so:
+        <code>[0-9]+</code>.</p>
+      </answer>
+    </faq>
+
+    <faq id="overlap" >
+      <question>What happens when multiple options share a name?  Or when
+      patterns and names &quot;overlap&quot;?</question>
+      <answer>
+        <p>Options are tried in the order returned by Java&apos;s reflection
+        functionality, so the behaviour in cases of overlap is undefined.</p>
+
+        <p>Patterns are, however, always tried <em>after</em> names.  Pattern
+        overlap can often be solved with more specific regular expressions.</p>
+      </answer>
+    </faq>
+
+  </part><!-- Parsing -->
+
+</faqs>
