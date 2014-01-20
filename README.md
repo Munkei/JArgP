@@ -30,4 +30,10 @@ Copyright 2014 Theo Willows
 ---
 
 The documentation below is mainly intended for developers of JArgP itself.  For
-usage documentation see JArgP's website.
+usage documentation see [JArgP's website](http://munkei.github.io/JArgP/).
+
+## Building ##
+
+JArgP uses Maven.  To compile, simply run:
+
+    mvn compile
